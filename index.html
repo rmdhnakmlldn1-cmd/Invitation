@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8"/>
@@ -322,12 +322,21 @@ html,body{min-height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);
   color:var(--rose3);}
 #qr-box{
   position:relative;
-  width:200px;height:200px;
-  display:flex;align-items:center;justify-content:center;}
-#qr-box canvas,#qr-box img{
-  display:block;
-  clip-path:path('M100 180 C100 180 20 130 20 75 C20 45 45 25 70 25 C83 25 95 32 100 40 C105 32 117 25 130 25 C155 25 180 45 180 75 C180 130 100 180 100 180Z');
-  filter:drop-shadow(0 4px 16px rgba(140,48,80,.25));}
+  display:inline-block;
+  padding:10px;background:white;border-radius:14px;
+  box-shadow:0 4px 16px rgba(140,48,80,.15);}
+#qr-box canvas,#qr-box img{display:block;}
+#qr-heart{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:36px;height:36px;
+  background:white;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 8px rgba(140,48,80,.2);
+  pointer-events:none;}
+#qr-heart svg{width:22px;height:22px;}
 .qr-url{font-size:11px;color:var(--muted);letter-spacing:.5px;text-align:center;}
 #toast{position:fixed;bottom:26px;left:50%;
   transform:translateX(-50%) translateY(14px);
@@ -804,7 +813,9 @@ html,body{min-height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);
     
     <div class="qr-wrap">
       <div class="qr-label">✦ scan untuk membuka di HP ✦</div>
-      <div id="qr-box"></div>
+      <div id="qr-box">
+        <img src="qrcode_362118433_7cf8d1ca84c2a70211c8575cc42987a9.png" alt="QR Code" style="width:220px;height:220px;display:block;"/>
+      </div>
       <div class="qr-url">rmdhnakmlldn1-cmd.github.io/Invitation</div>
     </div>
 
@@ -1020,15 +1031,6 @@ function showToast(msg){const t=document.getElementById('toast');t.textContent=m
 document.addEventListener('click',e=>{if(e.target.closest('button,.act-tile,.dc,#cfg,#gear,input,select,textarea,.env-scene'))return;burst(e.clientX,e.clientY,BURST_IMGS,3);});
 </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script>
-new QRCode(document.getElementById('qr-box'),{
-  text:'https://rmdhnakmlldn1-cmd.github.io/Invitation',
-  width:200,height:200,
-  colorDark:'#8b3050',
-  colorLight:'#ffffff',
-  correctLevel:QRCode.CorrectLevel.H
-});
-</script>
+
 </body>
 </html>
