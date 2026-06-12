@@ -320,9 +320,14 @@ html,body{min-height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);
   padding:20px 20px 16px;z-index:10;}
 .qr-label{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
   color:var(--rose3);}
-#qr-box{padding:10px;background:white;border-radius:10px;
-  box-shadow:0 4px 16px rgba(140,48,80,.1);}
-#qr-box canvas,#qr-box img{display:block;}
+#qr-box{
+  position:relative;
+  width:200px;height:200px;
+  display:flex;align-items:center;justify-content:center;}
+#qr-box canvas,#qr-box img{
+  display:block;
+  clip-path:path('M100 180 C100 180 20 130 20 75 C20 45 45 25 70 25 C83 25 95 32 100 40 C105 32 117 25 130 25 C155 25 180 45 180 75 C180 130 100 180 100 180Z');
+  filter:drop-shadow(0 4px 16px rgba(140,48,80,.25));}
 .qr-url{font-size:11px;color:var(--muted);letter-spacing:.5px;text-align:center;}
 #toast{position:fixed;bottom:26px;left:50%;
   transform:translateX(-50%) translateY(14px);
@@ -798,7 +803,7 @@ html,body{min-height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);
 
     
     <div class="qr-wrap">
-      <div class="qr-label">? scan untuk membuka di HP ?</div>
+      <div class="qr-label">✦ scan untuk membuka di HP ✦</div>
       <div id="qr-box"></div>
       <div class="qr-url">rmdhnakmlldn1-cmd.github.io/Invitation</div>
     </div>
@@ -1019,7 +1024,7 @@ document.addEventListener('click',e=>{if(e.target.closest('button,.act-tile,.dc,
 <script>
 new QRCode(document.getElementById('qr-box'),{
   text:'https://rmdhnakmlldn1-cmd.github.io/Invitation',
-  width:160,height:160,
+  width:200,height:200,
   colorDark:'#8b3050',
   colorLight:'#ffffff',
   correctLevel:QRCode.CorrectLevel.H
