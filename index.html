@@ -582,13 +582,13 @@ html,body{min-height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);
       <div class="inv-eyebrow">Sesuatu yang Ingin Kusampaikan<br>Kepadamu</div>
       <div class="inv-names">
         <div class="inv-name-main" id="inv-for-name">Mega</div>
-        <div class="inv-and">�</div>
+        <div class="inv-divider-diamond">&#9670;</div>
         <div class="inv-name-main" id="inv-from-name">Dari Rama</div>
       </div>
       <div class="inv-divider-diamond">
-        <span></span><span class="inv-diamond">?</span><span></span>
+        <span></span><span class="inv-divider-diamond">&#9670;</span><span></span>
       </div>
-      <div class="inv-detail">Boleh nggak aku minta waktumu?<br>Aku ingin pergi bersamamu � hanya kita berdua.</div>
+      <div class="inv-detail">Boleh nggak aku minta waktumu?<br>Aku ingin pergi bersamamu hanya kita berdua.</div>
       <div class="inv-question">"Satu kesempatan saja, aku janji tidak akan mengecewakan."</div>
 
       <div class="inv-btns">
@@ -614,7 +614,7 @@ html,body{min-height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);
 
 <div id="s2" class="screen hidden">
   <div class="plan-header">
-    <h2>Rencana Kita</h2>
+    <h2>Satu Hari, Satu Kenangan</h2>
     <p>setiap detail kecil akan membuatnya tak terlupakan</p>
   </div>
 
@@ -701,7 +701,7 @@ html,body{min-height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);
   <div class="plan-card">
     <div class="sec-lbl">
       <div class="sec-dot"></div>
-      Kata-kata untuk Rama
+      Kata-Kata Untuk Rama
     </div>
     <textarea class="msg-ta" id="p-msg" rows="2"
       placeholder="tulis sesuatu yang ingin kamu sampaikan..."></textarea>
@@ -713,7 +713,7 @@ html,body{min-height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);
 </div>
 
 <div id="s3" class="screen hidden">
-  <div class="tk-eyebrow">? &nbsp; Ini Resmi � Tiket Kencan Kita &nbsp; ?</div>
+  <div class="tk-eyebrow">&#9670; Ini Resmi Tiket Kencan Kita &#9670;</div>
 
   <div class="ticket">
     <div class="tk-wrap">
@@ -749,7 +749,7 @@ html,body{min-height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);
           One &amp; Only Date Pass
         </div>
         <div class="tk-for-lbl">khusus dipersembahkan untuk</div>
-        <div class="tk-for-name">untuk <span id="t-for">Mega</span></div>
+        <div class="tk-for-name"><span id="t-for">Mega</span></div>
       </div>
 
       <div class="tk-perf"></div>
@@ -761,7 +761,7 @@ html,body{min-height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);
         </div>
         <div class="tk-row">
           <div class="tk-icon"><img src="https://cdn-icons-png.flaticon.com/512/2088/2088617.png" alt=""/></div>
-          <div><div class="tk-lbl">Jangan Sampai Terlambat</div><div class="tk-val" id="t-time">Siang � 12:00</div></div>
+          <div><div class="tk-lbl">Jangan Sampai Terlambat</div><div class="tk-val" id="t-time">Siang · 12:00</div></div>
         </div>
         <div class="tk-row">
           <div class="tk-icon"><img src="https://cdn-icons-png.flaticon.com/512/3820/3820331.png" alt="" id="t-act-icon"/></div>
@@ -951,10 +951,10 @@ function genTicket(){
   const d=new Date(ds+'T12:00:00');
   document.getElementById('t-for').textContent=CFG.name;
   document.getElementById('t-date').textContent=`${DAYS[d.getDay()]}, ${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}`;
-  document.getElementById('t-time').textContent=`${dt} � ${tm}`;
+  document.getElementById('t-time').textContent=`${dt} · ${tm}`;
   document.getElementById('t-act').textContent=selAct;
   document.getElementById('t-dress').textContent=selDress;
-  document.getElementById('t-msg').textContent=msg||'�';
+  document.getElementById('t-msg').textContent=msg||'—';
   document.getElementById('t-from').textContent=CFG.from;
   document.getElementById('t-msg-row').style.display=msg?'flex':'none';
   goTo('s2','s3');setTimeout(()=>confetti(45),500);
